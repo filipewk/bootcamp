@@ -11,6 +11,11 @@ import java.util.List;
 public class GrupoPessoa {
 
     private Pessoa pessoa;
+
+    public List<Pessoa> getListaPessoa() {
+        return listaPessoa;
+    }
+
     private List<Pessoa> listaPessoa = new ArrayList<>();
 
 
