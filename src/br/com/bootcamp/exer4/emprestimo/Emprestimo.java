@@ -34,7 +34,6 @@ public class Emprestimo {
     }
 
     public String retornaNomeLivro(Aluno aluno) {
-        String nomeLivro = livrosDisponiveis.getLivroList().get(aluno.getIdLivro()).getNome();
-        return nomeLivro;
+        return livrosDisponiveis.getLivroList().get(aluno.getIdLivro()).getNome();
     }
 }
