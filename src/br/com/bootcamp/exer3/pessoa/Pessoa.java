@@ -20,13 +20,15 @@ public class Pessoa {
         return dataDeNascimento;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", email='" + email + '\'' +
-                ", dataDeNascimento=" + dataDeNascimento +
-                '}';
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
