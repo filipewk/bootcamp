@@ -15,7 +15,7 @@ public class Emprestimo {
     }
 
     public void emprestar(Aluno aluno, Livro livro, LocalDate data) {
-        if (aluno.getIdLivro() == -1) {
+        if (aluno.getIdLivro() == -1 && livro.getQuantidadeEstoque() > 0) {
             int index = 0;
             for (int i = 0; i < livrosDisponiveis.getLivroList().size(); i++) {
                 if (livrosDisponiveis.getLivroList().get(i).getNome() == livro.getNome()) {
@@ -23,7 +23,8 @@ public class Emprestimo {
                 }
             }
             aluno.setIdLivro(index);
-            livro.setQuantidade(livro.getQuantidade() +1);
+            livro.setQuantidadeEstoque(livro.getQuantidadeEstoque() - 1);
+            livro.setQuantidade(livro.getQuantidade() + 1);
             aluno.setDataEmprestimo(data);
             System.out.println("Aluno: " + aluno.getNome() + " emprestou o livro: " + retornaNomeLivro(aluno)
                     + " \n na data: " + aluno.getDataEmprestimo());
