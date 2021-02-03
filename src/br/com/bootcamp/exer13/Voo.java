@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Voo {
 
-    private Integer idVoo;
-    private LocalDateTime dataHora;
-    private Integer numeroMaxPassageiro;
-    private List<Integer> assento = new ArrayList<>();
+    private final Integer idVoo;
+    private final LocalDateTime dataHora;
+    private final Integer numeroMaxPassageiro;
+    private final List<Integer> assento = new ArrayList<>();
 
     public Voo(Integer idVoo, LocalDateTime dataHora, Integer numeroMaxPassageiro) {
         this.idVoo = idVoo;
