@@ -12,7 +12,7 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public void sacar(BigDecimal valor) {
-        if (super.getSaldo().compareTo(new BigDecimal(0)) > 0) {
+        if (super.getSaldo().compareTo(valor) > 0) {
             super.setSaldo(super.getSaldo().subtract(valor).subtract(valor.multiply(taxaDeOperacao)));
         } else {
             System.out.println("Saldo insuficiente");
@@ -21,6 +21,6 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public void depositar(BigDecimal valor) {
-       super.setSaldo(valor);
+        super.setSaldo(super.getSaldo().add(valor));
     }
 }

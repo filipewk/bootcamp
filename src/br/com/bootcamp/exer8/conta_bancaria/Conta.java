@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public abstract class Conta {
     private int numeroDaConta;
-    private BigDecimal saldo;
+    private BigDecimal saldo = new BigDecimal(0);
 
     public Conta(int numeroDaConta) {
         this.numeroDaConta = numeroDaConta;
