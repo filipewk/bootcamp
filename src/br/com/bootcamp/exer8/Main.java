@@ -24,6 +24,7 @@ public class Main {
         contaCorrente.depositar(new BigDecimal(500));
         System.out.println("Saldo na conta corrente: R$ " + contaCorrente.getSaldo());
         contaCorrente.sacar(new BigDecimal(700));
+        System.out.println("Limite: R$ " + contaCorrente.getSaldoMaisLimite());
 
         System.out.println("Saldo na conta corrente: R$ " + contaCorrente.getSaldo());
         System.out.println("");
@@ -36,5 +37,6 @@ public class Main {
         System.out.println("Sacar tudo: ");
         contaCorrente.sacar(new BigDecimal(300));
         System.out.println("Saldo na conta corrente: R$ " + contaCorrente.getSaldo());
+        System.out.println("Limite: R$ " + contaCorrente.getSaldoMaisLimite());
     }
 }
