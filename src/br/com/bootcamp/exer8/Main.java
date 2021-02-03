@@ -32,6 +32,7 @@ public class Main {
         System.out.println("Sacar mais que o saldo: ");
         contaCorrente.sacar(new BigDecimal(301));
         System.out.println("Saldo na conta corrente: R$ " + contaCorrente.getSaldo());
+        System.out.println("Limite: R$ " + contaCorrente.getSaldoMaisLimite());
 
         System.out.println("");
         System.out.println("Sacar tudo: ");
