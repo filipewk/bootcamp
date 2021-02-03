@@ -35,7 +35,17 @@ public class Voo {
     }
 
     public void ocupa(int assento) {
-        this.assento.remove(assento - 1);
+        int index = 0;
+        for (int i = 0; i < this.assento.size(); i++) {
+            if (this.assento.get(i) == assento) {
+                index = i;
+            }
+        }
+        if (assento <= numeroMaxPassageiro) {
+            this.assento.remove(index);
+        } else {
+            System.out.println("Assento fora do limite maximo.");
+        }
     }
 
     public boolean verifica(int assento) {
