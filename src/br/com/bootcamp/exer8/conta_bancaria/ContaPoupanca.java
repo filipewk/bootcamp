@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class ContaPoupanca extends Conta {
 
-    private BigDecimal taxaDeOperacao = new BigDecimal(0.01);
+    private final BigDecimal taxaDeOperacao = new BigDecimal("0.01");
 
     public ContaPoupanca(int numeroDaConta) {
         super(numeroDaConta);
@@ -12,7 +12,11 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public void sacar(BigDecimal valor) {
-       super.setSaldo(super.getSaldo().subtract(valor.multiply(taxaDeOperacao)));
+        if (super.getSaldo().compareTo(new BigDecimal(0)) > 0) {
+            super.setSaldo(super.getSaldo().subtract(valor).subtract(valor.multiply(taxaDeOperacao)));
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
     }
 
     @Override

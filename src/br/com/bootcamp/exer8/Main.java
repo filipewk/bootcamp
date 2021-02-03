@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Conta contaPoupanca = new ContaPoupanca(123456);
         contaPoupanca.depositar(new BigDecimal(100));
-        contaPoupanca.sacar(new BigDecimal(10));
+        contaPoupanca.sacar(new BigDecimal(50));
 
         System.out.println(contaPoupanca.getSaldo());
     }

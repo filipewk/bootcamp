@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 public class ContaCorrente extends Conta {
 
+    private int limite;
+
     public ContaCorrente(int numeroDaConta) {
         super(numeroDaConta);
     }
