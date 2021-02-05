@@ -6,7 +6,6 @@ import br.com.bootcamp.exer17.models.*;
 import br.com.bootcamp.exer17.service.*;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 
 public class Main {
 
@@ -27,12 +26,12 @@ public class Main {
         Item peca = new Item("Peça", 18);
 
         //PEDIDOS ITENS
-        PedidoItem pedidoItem = new PedidoItem(1, parafuso, 2, 3.50, 1.0);
-        PedidoItem pedidoItem2 = new PedidoItem(2, prego, 3, 1.50, 0.50);
-        PedidoItem pedidoItem3 = new PedidoItem(3, martelo, 5, 23.50, 10.0);
-        PedidoItem pedidoItem4 = new PedidoItem(4, chaveDeFenda, 1, 13.00, 2.0);
-        PedidoItem pedidoItem5 = new PedidoItem(5, chave, 1, 10.0, 1.0);
-        PedidoItem pedidoItem6 = new PedidoItem(6, peca, 10, 11.20, 2.0);
+        PedidoItem pedidoItem = new PedidoItem(parafuso, 2, 3.50, 1.0);
+        PedidoItem pedidoItem2 = new PedidoItem( prego, 3, 1.50, 0.50);
+        PedidoItem pedidoItem3 = new PedidoItem(martelo, 5, 23.50, 10.0);
+        PedidoItem pedidoItem4 = new PedidoItem(chaveDeFenda, 1, 13.00, 2.0);
+        PedidoItem pedidoItem5 = new PedidoItem(chave, 1, 10.0, 1.0);
+        PedidoItem pedidoItem6 = new PedidoItem(peca, 10, 11.20, 2.0);
 
         //EMAIL
         Email email = new Email();
@@ -56,11 +55,6 @@ public class Main {
         vendedorService.inserir(vendedor);
         clienteService.inserir(cliente);
 
-        // PEDIDOS
-        Pedido pedido = new Pedido(
-                1, cliente, vendedor, LocalDateTime.now(),
-                FormaDePagamento.DINHEIRO, pedidoItemService.buscarTodos());
-
         // ADICIONAR ITEM
         itemService.inserir(parafuso);
         itemService.inserir(prego);
@@ -77,10 +71,13 @@ public class Main {
         pedidoItemService.inserir(pedidoItem5);
         pedidoItemService.inserir(pedidoItem6);
 
+        // PEDIDOS
+        Pedido pedido = new Pedido(cliente, vendedor, LocalDateTime.now(),
+                FormaDePagamento.DINHEIRO, pedidoItemService.buscarTodos());
+
         //ADICIONAR PEDIDO
         pedidoService.inserir(pedido);
 
         System.out.println(pedidoItemService.buscarTodos());
-
     }
 }

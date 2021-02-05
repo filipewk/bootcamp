@@ -1,5 +1,7 @@
 package br.com.bootcamp.exer17.models;
 
+import java.util.List;
+
 public class Item {
 
     private Integer id;
@@ -7,6 +9,7 @@ public class Item {
     private boolean inativo = false;
     private Integer quantidadeEmEstoque;
     private Double valorUnitario;
+    private List<PedidoItem> pedidoItem;
 
     public Item(String descricao, Integer quantidadeEmEstoque) {
         this.descricao = descricao;
@@ -53,6 +56,14 @@ public class Item {
         this.valorUnitario = valorUnitario;
     }
 
+    public List<PedidoItem> getPedidoItem() {
+        return pedidoItem;
+    }
+
+    public void setPedidoItem(List<PedidoItem> pedidoItem) {
+        this.pedidoItem = pedidoItem;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
@@ -60,7 +71,6 @@ public class Item {
                 ", descricao='" + descricao + '\'' +
                 ", inativo=" + inativo +
                 ", quantidadeEmEstoque=" + quantidadeEmEstoque +
-                ", valorUnitario=" + valorUnitario +
                 '}';
     }
 }

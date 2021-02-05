@@ -18,8 +18,7 @@ public class Pedido {
     private FormaDePagamento formaDePagamento;
     private List<PedidoItem> item;
 
-    public Pedido(Integer id, Cliente cliente, Vendedor vendedor, LocalDateTime dataDeCadastro, FormaDePagamento formaDePagamento, List<PedidoItem> item) {
-        this.id = id;
+    public Pedido(Cliente cliente, Vendedor vendedor, LocalDateTime dataDeCadastro, FormaDePagamento formaDePagamento, List<PedidoItem> item) {
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.dataDeCadastro = dataDeCadastro;

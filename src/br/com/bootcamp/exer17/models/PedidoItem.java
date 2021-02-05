@@ -12,8 +12,7 @@ public class PedidoItem {
     private Double valorUnitario;
     private Double valorDesconto;
 
-    public PedidoItem(Integer id, Item item, Integer quantidade, Double valorUnitario, Double valorDesconto) {
-        this.id = id;
+    public PedidoItem(Item item, Integer quantidade, Double valorUnitario, Double valorDesconto) {
         this.item = item;
         this.quantidade = quantidade;
         this.valorUnitario = valorUnitario;
@@ -70,12 +69,19 @@ public class PedidoItem {
         this.valorDesconto = valorDesconto;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public List<Item> getItens() {
+        return itens;
+    }
+
     @Override
     public String toString() {
         return "PedidoItem{" +
                 "id=" + id +
                 ", item=" + item +
-                ", itens=" + itens +
                 ", quantidade=" + quantidade +
                 ", valorUnitario=" + valorUnitario +
                 ", valorDesconto=" + valorDesconto +

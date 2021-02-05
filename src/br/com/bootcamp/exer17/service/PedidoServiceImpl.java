@@ -3,6 +3,8 @@ package br.com.bootcamp.exer17.service;
 import br.com.bootcamp.exer17.interfaces.dao.PedidoDAO;
 import br.com.bootcamp.exer17.interfaces.service.PedidoService;
 import br.com.bootcamp.exer17.models.Pedido;
+import br.com.bootcamp.exer17.models.PedidoItem;
+import br.com.bootcamp.exer17.validacoes.Valida;
 
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class PedidoServiceImpl implements PedidoService {
 
     @Override
     public Pedido inserir(Pedido objeto) {
+        preInserir(objeto);
         return dao.inserir(objeto);
     }
 
@@ -37,5 +40,12 @@ public class PedidoServiceImpl implements PedidoService {
     @Override
     public boolean excluir(Integer id) {
         return dao.excluir(id);
+    }
+
+    private void preInserir(Pedido objeto) {
+        new Valida(objeto).validaDesconto();
+        new Valida(objeto).validaItemAtivos();
+        new Valida(objeto).validadeSeTemEstoque();
+        new Valida(objeto).validaValorUnitario();
     }
 }
